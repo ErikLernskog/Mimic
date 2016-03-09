@@ -1,19 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.lernskog.erik.mimic.MimicActivity"
-    tools:showIn="@layout/activity_mimic">
 
-    <TextView
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/gradient1">
+    <View
+        android:id="@+id/center"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_centerInParent="true"
+        android:background="#f333"
+        />
+    <ImageView
+        android:id="@+id/recording"
+        android:src="@drawable/recording"
+        android:visibility="invisible"
+        android:clickable="true"
+        android:onClick="record"
+
+        android:layout_above="@id/center"
+        android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        />
+    <Button
+        android:id="@+id/record"
+        android:text="@string/btn_record"
+        android:singleLine="true"
+        android:drawableLeft="@drawable/microphone"
+        android:onClick="record"
+        android:textSize="26sp"
+        android:layout_marginLeft="100dp"
+
+        android:layout_below="@id/center"
+        android:layout_centerHorizontal="true"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        />
+    <Button
+        android:id="@+id/play"
+        android:text="@string/btn_play"
+        android:singleLine="true"
+        android:drawableLeft="@drawable/play"
+        android:drawableRight="@drawable/stop"
+        android:onClick="play"
+        android:textSize="26sp"
+
+        android:layout_below="@id/record"
+        android:layout_centerHorizontal="true"
+        android:layout_alignLeft="@id/record"
+        android:layout_alignRight="@id/record"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+    <CheckBox
+        android:id="@+id/repeat"
+        android:text="@string/btn_repeat"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:textColor="#02739a"
+        android:checked="true"
+        android:onClick="repeat"
+
+        android:layout_below="@id/play"
+        android:layout_alignLeft="@id/record"
+        android:layout_alignRight="@id/record"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+    <Button
+        android:id="@+id/delete"
+        android:text="@string/btn_delete"
+        android:singleLine="true"
+        android:drawableLeft="@drawable/trash_can"
+        android:onClick="delete"
+        android:textSize="26sp"
+
+        android:layout_below="@id/repeat"
+        android:layout_centerHorizontal="true"
+        android:layout_alignLeft="@id/record"
+        android:layout_alignRight="@id/record"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
 </RelativeLayout>
